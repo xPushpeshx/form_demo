@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            table {
+                border-collapse: seperate;
+                border-spacing: 20px 0;
+            }
+            .center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h3 {
+                text-align: center;
+            }
+        </style>
+        <h>show information</h>
+        <b><a href='\'>Home</a></b>
+        <br>
+        <h4><a href='/getfile'>get csv</a></h4>
+        {% if stu %}
+        <h3>table data</h3>
+        <table class='center'>
+            <thread>
+                <tr>
+                    <th scope='col'>name</th>
+                    <th scope='col'>email</th>
+                    <th scope='col'>phone no.</th>
+                    <th scope='col'>DOB</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for st in stu %}
+                <tr>
+                    <th scope='row'>{{st.name}}</th>
+                    <th scope='row'>{{st.email}}</th>
+                    <th scope='row'>{{st.phoneno}}</th>
+                    <th scope='row'>{{st.dob}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h4>No data found</h4>
+        {% endif %}
+    </body>
+</html>
